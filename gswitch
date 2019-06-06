@@ -33,7 +33,7 @@ do_reload() {
       = "active" ]; do
       sleep 1
     done
-    if [ ${XORG_DRIVER} = "nvidia" ]; then
+    if [[ ${XORG_DRIVER} = *"nvidia"* ]]; then
       for DRIVER in nvidia_uvm nvidia_drm nvidia_modeset nvidia; do
         modprobe -r ${DRIVER}
       done
